@@ -1,0 +1,16 @@
+h1{
+    font-size: 30px;
+    text-align: center;
+    position: absolute;
+    justify-content: center;
+    color: white;
+}
+
+.lista{
+    width: 20vw;
+    height: 100vh;
+    background-color: #253d6e;
+    position: absolute;
+    z-index: 1;
+
+}
