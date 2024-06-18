@@ -1,0 +1,73 @@
+#lista_horarios{    
+    width: 14vw;
+    height: 92vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: #253d6e;
+   
+}
+button{
+    width: 2vw;
+    height: 2vw;
+    background-color: #f9ce3a;
+    border-radius: 15%;  
+}
+#fechar_aba_pontos h4{
+    font-size: 1.5vw;
+    margin: 0;
+    color: white;
+}
+#fechar_aba_pontos{
+    font-size: 2vw;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw ;
+}
+.horarios{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    background-color: #f9ce3a;
+    margin-top: 1.5vw;
+    border-radius: 0.7vw;
+    width: 90%;
+    height: 2.2vw;
+    align-items: center; 
+}
+.horarios h4{
+    background-color: white;
+    font-size: 1vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 4vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5vw;
+}
+.horarios h5{
+    background-color: white;
+    font-size: 1vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    width: 5vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5vw;
+}
+
+
