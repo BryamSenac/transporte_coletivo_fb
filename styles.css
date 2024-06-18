@@ -1,5 +1,4 @@
-#map {
-    width: 100vw;
-    height: 100vh;
-}
+@import url(/css/body.css);
+@import url(/css/map.css);
+
   
