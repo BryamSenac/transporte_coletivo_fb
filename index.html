@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,282 @@
   <link rel="stylesheet" href="css/styles.css">
 
   <script src="/index.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&callback=initMap"
+    async defer></script>
 </head>
+
 <body>
   <section id="lista_onibus">
-<nav class="lista">
-  <h1>Lista de Ônibus</h1>
-</nav>
+    <h1>Lista de Ônibus</h1>
+    <div id="busca_onibus"></div>
+    <nav class="lista">
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>     
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+      <div class="cartao_onibus">
+        <div class="cartao_top">
+          <div>
+            <h3>Nome do Ônibus</h3>
+            <h6>placa</h6>
+          </div>
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <div class="cartao_botton">
+          <div class="partida">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+          <i class="fa-solid fa-arrow-right"></i>
+          <div class="destino">
+            <h5>Local Partida</h5>
+            <p>Partida</p>
+          </div>
+        </div>
+      </div>  
+    </nav>
   </section>
-  <section>
+  <!--<section>
     <header>
-
+        <div class="search-box">
+          <form method="post" action="#">
+            <input type="text" class="search-box-input" name="busca" placeholder="Faça sua Pesquisa">
+            <button class="search-box-button"><i class="search-box-icone fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div id="img_logo"></div>
+        <div id="preco"><h2>R$4,60</h2></div>
     </header>
     <section id="lista_horarios">
-      
+      <div id="titulo_ponto">
+        <h1>INDUSTRIAL</h1>
+        <button><i class="fa-solid fa-square-xmark"></i></button>
+      </div>
+      <nav id="horario_pontos">
+        <div>
+          <h2>12:30</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+          <h2>Próxima Parada</h2>
+        </div>
+        <div>
+          <h2>12:30</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+          <h2>Próxima Parada</h2>
+        </div>
+        <div>
+          <h2>12:30</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+          <h2>Próxima Parada</h2>
+        </div>
+        <div>
+          <h2>12:30</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+          <h2>Próxima Parada</h2>
+        </div>
+        <div>
+          <h2>12:30</h2>
+          <i class="fa-solid fa-arrow-right"></i>
+          <h2>Próxima Parada</h2>
+        </div>
+      </nav>
     </section>
-  </section>
-  <div id="map"></div>  
+  </section>-->
+  <!--<div id="map"></div>-->
 </body>
 </html>
