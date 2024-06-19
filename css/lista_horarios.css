@@ -1,12 +1,75 @@
 #lista_horarios{    
-    width: 16vw;
-    height: 80vh;
-
+    width: 14vw;
+    height: 92vh;
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: 1;
-
     background-color: #253d6e;
 }
 
+button{
+    background-color: transparent;
+    border: none;    
+}
+button i{
+    color: #f9ce3a;
+    font-size: 1.5vw;
+    margin-top: 0.2vw;
+}
+#titulo_ponto h1{
+    margin-top: 0.3vw;
+    margin-left: 0.3vw;
+    font-size: 1vw;
+    color: white;
+    margin-bottom: 0;
+    
+}
+#titulo_ponto{
+    width: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:space-between; 
+}
+#horario_pontos div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    background-color: #f9ce3a;
+    margin-top: 1.5vw;
+    border-radius: 0.35vw;
+    width: 90%;
+    height: 2.2vw;
+    align-items: center; 
+}
+#horario_pontos div h2{
+    background-color: rgb(240, 240, 240);
+    font-size: 1vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.25vw;
+    margin-right: 0.5vw;
+    width: 4vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.35vw;
+}
+#horario_pontos div h3{
+    background-color:rgb(240, 240, 240);
+    font-size: 0.7vw;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0.5vw;
+    margin-right: 0.35vw;
+    width: 5vw;
+    height: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.35vw;
+}
