@@ -2,6 +2,7 @@
 @import url(/css/map.css);
 @import url(/css/lista_horarios.css);
 @import url(/css/lista_onibus.css);
+@import url(/css/header.css);
 
 @font-face {
     font-family:'font_bold'/*spartan*/;

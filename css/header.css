@@ -1,0 +1,24 @@
+#img_logo{
+    width: 15vw;
+    left: 70vw;
+    position: absolute;
+    z-index: 1;
+}
+
+#preco{
+    width: 9vw;
+    height: 4vw;
+    border-radius: 100px;
+    left: 88vw;
+    position: absolute;
+    background-color: #1D386E;
+    box-shadow: 1px 6px 9px black;
+    z-index: 1;
+}
+
+#cor_preco{
+    color: #F9CE3A;
+    font-size: 28px;
+    text-align: center;
+    font-family: font_bold;
+}
