@@ -12,19 +12,23 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items:center;
     justify-content:space-between; 
-
-    padding: 1vw;
+    padding-top: 0;
+    padding: 0.5vw;
 }
 
 #titulo_ponto h1{
     font-family: 'font_bold';
     font-size: 1.5vw;
     color: #f6f4f4;
+    margin-top: 0.8vw;
 }
 #titulo_ponto img{
-    width: 1.8vw;   
+    width: 1.8vw;
+    margin-right: 1.3vw;
+    margin-top: 0.5vw;
+    height: 1.8vw;
+
 }
 
 #horario_pontos{
