@@ -29,6 +29,7 @@
 
 #horario_pontos{
     overflow-y: scroll;
+    scrollbar-width: none; /*Escondendo o scroll da barra */
     width: 100%;
     height: auto;
     display: flex;
