@@ -88,6 +88,9 @@ const grayStyle = [
 ];
 let map;
 let searchBox;
+let directionsService;
+let directionsRenderer;
+let rotas;
 function initMap() {
   // Opções do mapa
   const mapOptions = {
@@ -102,7 +105,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   // URL do icone
   const iconUrl = './assets/icons/bus_station_icon.svg'; // Trocar pelo icone da localização
-  const rotas = [
+  rotas = [
     {
       rota: 'sao_cristovao', pontos: [
         { lat: -26.113364622756166, lng: -53.041800439586964, title: "Pr 180" },
@@ -175,7 +178,7 @@ function initMap() {
         title: "Hello World!",
         icon: {
           url: iconUrl, // URL da imagem do ícone personalizado
-          scaledSize: new google.maps.Size(35, 35) // Tamanho da imagem (opcional)
+          scaledSize: new google.maps.Size(40, 40) // Tamanho da imagem (opcional)
         },
         // label: {
         //   text: rotas[i].pontos[j].title,
@@ -199,8 +202,8 @@ function initMap() {
     }
   }
 
-  const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer({
+  directionsService = new google.maps.DirectionsService();
+  directionsRenderer = new google.maps.DirectionsRenderer({
     suppressMarkers: true,
     polylineOptions: {
       strokeColor: '#F9CE3A',
@@ -209,19 +212,18 @@ function initMap() {
   });
 
   directionsRenderer.setMap(map);
+}
 
-  const waypoints = rotas[1].pontos.slice(1, -1).map(location => ({
+function calculateAndDisplayRoute(rota) {
+  const waypoints = rota.pontos.slice(1, -1).map(location => ({
     location: location,
     stopover: true
   }));
-  calculateAndDisplayRoute(directionsService, directionsRenderer, rotas[1].pontos[0], rotas[1].pontos[rotas[1].pontos.length - 1], waypoints);
-}
 
-function calculateAndDisplayRoute(directionsService, directionsRenderer, start, end, waypoints) {
   directionsService.route(
     {
-      origin: start,
-      destination: end,
+      origin: rota.pontos[0],
+      destination: rota.pontos[rota.pontos.length - 1],
       waypoints: waypoints,
       travelMode: google.maps.TravelMode.DRIVING
     },
@@ -233,6 +235,9 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, start, 
       }
     }
   );
+}
+function handleRouteButtonClick(index) {
+  calculateAndDisplayRoute(rotas[index]);
 }
 
 async function searchPlaces() {
