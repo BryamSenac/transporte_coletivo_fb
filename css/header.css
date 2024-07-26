@@ -28,12 +28,9 @@ header{
     font-size: 1.5vw;
 }
 .bairro_botao{
-    height: 100%;
+    height: 105%;
     cursor: pointer;
-
-    background-color: #253d6e;
-    padding: 0.4vw;
-    border-radius: 50vw;    
+    border-radius: 50vw;   
     box-shadow: 0.1vw 0.2vw rgba(35, 35, 35, 0.5);
 }
 #img_logo{

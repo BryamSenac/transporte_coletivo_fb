@@ -86,6 +86,8 @@ const grayStyle = [
     stylers: [{ color: '#9e9e9e' }]
   }
 ];
+let map;
+let searchBox;
 function initMap() {
   // Opções do mapa
   const mapOptions = {
@@ -97,9 +99,9 @@ function initMap() {
     mapTypeControl: false, // Remove o controle de tipo de mapa (satélite)
   };
   // Cria o mapa
-  const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  map = new google.maps.Map(document.getElementById('map'), mapOptions);
   // URL do icone
-  const iconUrl = './assets/icons/bus_icon.svg'; // Trocar pelo icone da localização
+  const iconUrl = './assets/icons/bus_station_icon.svg'; // Trocar pelo icone da localização
   const rotas = [
     {
       rota: 'sao_cristovao', pontos: [
@@ -130,7 +132,7 @@ function initMap() {
         { lat: -26.055227, lng: -53.035760, title: "Av. Tucano" },
         { lat: -26.053769, lng: -53.035459, title: "R. Pica Pau." },
         { lat: -26.051291, lng: -53.034597, title: "R. Beija Flor" },
-        { lat: -26.058889, lng: -53.031722, title: "R. Pelicano" }, 
+        { lat: -26.058889, lng: -53.031722, title: "R. Pelicano" },
       ]
     },
     {
@@ -164,26 +166,25 @@ function initMap() {
       ]
     },
   ];
-  console.log(rotas[0].pontos.length);
 
   for (let i = 0; i < rotas.length; i++) {
-    for (let j = 0; j < rotas[i].pontos.length; j++){
+    for (let j = 0; j < rotas[i].pontos.length; j++) {
       const marker = new google.maps.Marker({
         position: rotas[i].pontos[j],
         map,
         title: "Hello World!",
         icon: {
           url: iconUrl, // URL da imagem do ícone personalizado
-          scaledSize: new google.maps.Size(20, 20) // Tamanho da imagem (opcional)
+          scaledSize: new google.maps.Size(35, 35) // Tamanho da imagem (opcional)
         },
-        label: {
-          text: rotas[i].pontos[j].title,
-          color: "#000000",
-          fontSize: "25px",
-          fontWeight: "tiny",
-          fontSize: "0.7vw",
-          className: "textoTeste"
-        },
+        // label: {
+        //   text: rotas[i].pontos[j].title,
+        //   color: "#000000",
+        //   fontSize: "25px",
+        //   fontWeight: "tiny",
+        //   fontSize: "0.7vw",
+        //   className: "textoTeste"
+        // },
       });
       const style = document.createElement('style');
       style.type = 'text/css';
@@ -197,4 +198,76 @@ function initMap() {
       });
     }
   }
+
+  const directionsService = new google.maps.DirectionsService();
+  const directionsRenderer = new google.maps.DirectionsRenderer({
+    suppressMarkers: true,
+    polylineOptions: {
+      strokeColor: '#F9CE3A',
+      strokeWeight: 4,
+    }
+  });
+
+  directionsRenderer.setMap(map);
+
+  const waypoints = rotas[1].pontos.slice(1, -1).map(location => ({
+    location: location,
+    stopover: true
+  }));
+  calculateAndDisplayRoute(directionsService, directionsRenderer, rotas[1].pontos[0], rotas[1].pontos[rotas[1].pontos.length - 1], waypoints);
 }
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer, start, end, waypoints) {
+  directionsService.route(
+    {
+      origin: start,
+      destination: end,
+      waypoints: waypoints,
+      travelMode: google.maps.TravelMode.DRIVING
+    },
+    (response, status) => {
+      if (status === 'OK') {
+        directionsRenderer.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    }
+  );
+}
+
+async function searchPlaces() {
+  const input = document.getElementById('busca_mapa');
+  const searchText = input.value + ', Francisco Beltrão - PR, Brasil';
+
+  try {
+    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(searchText)}&key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w`);
+    const data = await response.json();
+
+    if (data.status === 'OK' && data.results.length > 0) {
+      const bounds = new google.maps.LatLngBounds();
+      data.results.forEach(result => {
+        bounds.extend(result.geometry.location);
+      });
+      map.fitBounds(bounds);
+      map.setZoom(Math.min(map.getZoom(), 16));
+    } else {
+      console.error('Geocoding API error:', data.status);
+    }
+  } catch (error) {
+    console.error('Error fetching geocoding data:', error);
+  }
+}
+
+function loadScript(url, callback) {
+  const script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = url;
+  script.async = true;
+  script.defer = true;
+  script.onload = callback;
+  document.body.appendChild(script);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  loadScript(`https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&libraries=places&callback=initMap`);
+});
