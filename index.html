@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/css/styles.css">
 
   <script src="/index.js" defer></script>
+  <script src="/busca.js" defer></script>
   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&callback=initMap"
    async defer></script> -->
 </head>
@@ -17,8 +18,8 @@
   <section id="lista_onibus">
     <h1>Lista de Ônibus</h1>
     <div id="busca_onibus">
-      <input type="text" class="busca_input onibus_input" name="busca_onibus" placeholder="Bairro...">
-      <img class="busca_botao onibus_botao" src="/assets/icons/search_icon.svg">
+      <input id="texto_input" type="text" class="busca_input onibus_input" name="busca_onibus" placeholder="Bairro...">
+      <img id="pesquisar_btn" class="busca_botao onibus_botao" src="/assets/icons/search_icon.svg">
     </div>
     <nav class="lista">
       <div class="cartao_onibus">
