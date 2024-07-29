@@ -214,7 +214,7 @@ function initMap() {
   directionsRenderer.setMap(map);
 }
 
-function calculateAndDisplayRoute(rota) {
+function criarRotas(rota) {
   const waypoints = rota.pontos.slice(1, -1).map(location => ({
     location: location,
     stopover: true
