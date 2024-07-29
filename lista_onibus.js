@@ -1,12 +1,12 @@
-function exibirAlerta() {
-    alert('Cartão clicado!');
-}
+import { criarRotas, initMap,  getRotas } from './index.js';
 
-for(let i = 0; i < 50 ;i++){// Criar o cartão principal
+for(let i = 0; i < 4; i++){// Criar o cartão principal
 let divCartao = document.createElement('div');
 divCartao.className = 'cartao_onibus';
-divCartao.addEventListener('click', exibirAlerta);
-
+divCartao.addEventListener('click', () => criarRotas(getRotas(i)));
+// index.js ou onde você definiu a função initMap
+window.initMap = initMap;
+  
 // Criar a parte superior do cartão
 let divCartaoTop = document.createElement('div');
 divCartaoTop.className = 'cartao_top';

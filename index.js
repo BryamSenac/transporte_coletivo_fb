@@ -91,7 +91,7 @@ let searchBox;
 let directionsService;
 let directionsRenderer;
 let rotas;
-function initMap() {
+export function initMap() {
   // Opções do mapa
   const mapOptions = {
     zoom: 15,
@@ -214,7 +214,7 @@ function initMap() {
   directionsRenderer.setMap(map);
 }
 
-function criarRotas(rota) {
+export function criarRotas(rota) {
   const waypoints = rota.pontos.slice(1, -1).map(location => ({
     location: location,
     stopover: true
@@ -235,9 +235,6 @@ function criarRotas(rota) {
       }
     }
   );
-}
-function handleRouteButtonClick(index) {
-  calculateAndDisplayRoute(rotas[index]);
 }
 
 async function searchPlaces() {
@@ -276,3 +273,7 @@ function loadScript(url, callback) {
 document.addEventListener('DOMContentLoaded', function () {
   loadScript(`https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&libraries=places&callback=initMap`);
 });
+
+export function getRotas(i){
+    return rotas[i];
+}
