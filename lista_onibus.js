@@ -2,8 +2,6 @@ function exibirAlerta() {
     alert('Cartão clicado!');
 }
 
-
-
 for(let i = 0; i < 50 ;i++){// Criar o cartão principal
 let divCartao = document.createElement('div');
 divCartao.className = 'cartao_onibus';
