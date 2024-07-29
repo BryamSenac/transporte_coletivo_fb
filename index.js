@@ -91,7 +91,7 @@ let searchBox;
 let directionsService;
 let directionsRenderer;
 let rotas;
-function initMap() {
+export function initMap() {
   // Opções do mapa
   const mapOptions = {
     zoom: 15,
@@ -214,7 +214,7 @@ function initMap() {
   directionsRenderer.setMap(map);
 }
 
-function calculateAndDisplayRoute(rota) {
+export function criarRotas(rota) {
   const waypoints = rota.pontos.slice(1, -1).map(location => ({
     location: location,
     stopover: true
@@ -235,9 +235,6 @@ function calculateAndDisplayRoute(rota) {
       }
     }
   );
-}
-function handleRouteButtonClick(index) {
-  calculateAndDisplayRoute(rotas[index]);
 }
 
 async function searchPlaces() {
@@ -285,4 +282,7 @@ function escodeHorario() {
 function mostraHorario() {
   let horarios = document.getElementById('lista_horarios');
   horarios.style.right = '0vw'
+}
+export function getRotas(i){
+    return rotas[i];
 }
