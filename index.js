@@ -195,8 +195,8 @@ function initMap() {
       document.getElementsByTagName('head')[0].appendChild(style);
 
       marker.addListener('click', function () {
+        mostraHorario()
         // Ação ao clicar no marcador
-        alert(rotas[i].pontos[j].title);
         // Você pode adicionar qualquer ação aqui, como abrir um modal, redirecionar, etc.
       });
     }
@@ -276,3 +276,13 @@ function loadScript(url, callback) {
 document.addEventListener('DOMContentLoaded', function () {
   loadScript(`https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&libraries=places&callback=initMap`);
 });
+
+
+function escodeHorario() {
+  let horarios = document.getElementById('lista_horarios');
+  horarios.style.right = '-15vw'
+}
+function mostraHorario() {
+  let horarios = document.getElementById('lista_horarios');
+  horarios.style.right = '0vw'
+}
