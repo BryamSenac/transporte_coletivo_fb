@@ -114,8 +114,10 @@
     font-size: 1.7vw;
 }
 .cartao_onibus h5{
-    font-size: 1.2vw;
-    max-height: 2.5vw;
+    font-size: 1vw;
+    max-height: 1.8vw;
+    overflow: hidden;
+    margin-bottom: 0.2vw;
 }
 
 .destino{

@@ -1,5 +1,5 @@
 export class Mapa {
-    constructor(rotas) {
+    constructor(pontos, rotas, horarios) {
         this.mapStyle = [
             {
                 elementType: 'geometry',
@@ -96,38 +96,43 @@ export class Mapa {
             fullscreenControl: false, // Remove o controle de tela cheia
             mapTypeControl: false, // Remove o controle de tipo de mapa (satélite)
         };
-        this.rotas = rotas
+
+        this.pontos = pontos;
+        this.rotas = rotas;
+        this.horarios = horarios;
+
         this.iconMarker = '../assets/icons/bus_station_icon.svg';
         this.map = null;
         this.directionsService = null;
         this.directionsRenderer = null;
     }
 
-    initMap(onCliked) {
+    initMap() {
         this.map = new google.maps.Map(document.getElementById('map'), this.mapOptions);
-        this.createMarkers(onCliked);
+        this.createMarkers();
         this.configRouts();
-
     }
 
-    createMarkers(onCliked) {
-        for (let i = 0; i < this.rotas.length; i++) {
-            for (let j = 0; j < this.rotas[i].pontos.length; j++) {
-                const marker = new google.maps.Marker({
-                    position: this.rotas[i].pontos[j],
-                    map: this.map,
-                    icon: {
-                        url: this.iconMarker,
-                        scaledSize: new google.maps.Size(45, 45),
-                    },
-                });
+    createMarkers() {
+        for (let i = 0; i < this.pontos.length; i++) {
+            const marker = new google.maps.Marker({
+                position: this.pontos[i].location,
+                map: this.map,
+                icon: {
+                    url: this.iconMarker,
+                    scaledSize: new google.maps.Size(45, 45),
+                },
+            });
 
-                const style = document.createElement('style');
-                style.type = 'text/css';
-                style.innerHTML = '.textoTeste {transform: translateY(-25px); }';
-                document.getElementsByTagName('head')[0].appendChild(style);
-                marker.addListener('click', onCliked);
-            }
+            const style = document.createElement('style');
+            style.type = 'text/css';
+            style.innerHTML = '.textoTeste {transform: translateY(-25px); }';
+            document.getElementsByTagName('head')[0].appendChild(style);
+            marker.addListener(
+                'click', () => {
+                    this.horarios.showHorarios(this.pontos[i].horarios);
+                }
+            );
         }
     }
 

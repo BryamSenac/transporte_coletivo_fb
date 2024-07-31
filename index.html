@@ -7,6 +7,7 @@
   <title>Mapa</title>
 
   <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&libraries=places&callback=initMap" async defer ></script>
   <script type="module" src="./js/index.js" defer></script>
 </head>
 
@@ -33,39 +34,13 @@
     </header>
     <section id="lista_horarios">
       <div id="titulo_ponto">
-        <h1>INDUSTRIAL</h1>
+        <h1 id="nome_bairro">INDUSTRIAL</h1>
         <img class="busca_botao" src="/assets/icons/exit_icon.svg" alt="Fechar" onclick="hideHorarios()">
       </div>
       <nav id="horario_pontos">
-        <div>
-          <h2>12:30</h2>
-          <img src="/assets/icons/flecha.svg" alt="icone_flecha">
-          <h3>Próxima Parada</h3>
-        </div>
-        <div>
-          <h2>12:30</h2>
-          <img src="/assets/icons/flecha.svg" alt="icone_flecha">
-          <h3>Próxima Parada</h3>
-        </div>
-        <div>
-          <h2>12:30</h2>
-          <img src="/assets/icons/flecha.svg" alt="icone_flecha">
-          <h3>Próxima Parada</h3>
-        </div>
-        <div>
-          <h2>12:30</h2>
-          <img src="/assets/icons/flecha.svg" alt="icone_flecha">
-          <h3>Próxima Parada</h3>
-        </div>
-        <div>
-          <h2>12:30</h2>
-          <img src="/assets/icons/flecha.svg" alt="icone_flecha">
-          <h3>Próxima Parada</h3>
-        </div>
       </nav>
     </section>
   </section>
   <div id="map"></div>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8ExwQYDT5fOMbed02I9v7xp5EBPzcm-w&libraries=places&callback=initMap" async defer ></script>
-</body>
+  </body>
 </html>
