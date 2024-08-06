@@ -70,3 +70,30 @@
 .busca_botao{
     cursor: pointer;
 }
+
+@media (max-width: 425px) {
+    #lista_horarios{
+        width: 60vw;
+        height: 90vh;
+    }
+    #titulo_ponto h1{
+        font-size: 5vw;
+    }
+    #titulo_ponto img{
+        width: 6vw;
+        height: 6vw;
+    }
+    #horario_pontos{
+        margin-top: 5%;
+    }
+    #horario_pontos div{
+        border-radius: 1vw;
+        margin: 1vw;
+        padding: 1vw;
+    }
+    #horario_pontos div h2, #horario_pontos div h3{
+        font-size: 5vw;
+        background-color: transparent;
+        color: #313030
+    }
+}

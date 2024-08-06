@@ -11,7 +11,7 @@ export class Horarios{
     }
 
     hideHorarios(){
-        this.lista.style.right = '-15vw';
+        this.lista.style.right = '-100vw';
     }
 
     createHorarios(horarios){

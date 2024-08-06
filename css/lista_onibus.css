@@ -8,7 +8,6 @@
 #lista_onibus {
     position: absolute;
     left: 0;
-    top: 0;
     bottom: 0;
 
     z-index: 1;
@@ -112,8 +111,10 @@
 }
 .cartao_onibus h3 {
     font-size: 1.7vw;
+    color: #313030;
 }
 .cartao_onibus h5{
+    color: #313030;
     font-size: 1vw;
     max-height: 1.8vw;
     overflow: hidden;
@@ -124,3 +125,47 @@
     text-align: end;
 }
 
+
+@media (max-width: 425px) {
+    #lista_onibus{
+        bottom: 0;
+        z-index: 3;
+        width: 100vw;
+        height: 15vh;
+    } 
+    #lista_onibus h1{
+        display: none;
+    }
+    #busca_onibus{
+        display: none;
+    }
+    .lista{
+        height: 100%;
+        width: auto;
+        flex-direction: row;
+        overflow-x: scroll;
+    }
+    .cartao_onibus{
+        height: 90%;
+        width: auto;
+        border-radius: 1.5vw;
+        padding: 0.8vw;
+    }
+    .cartao_top, .cartao_botton{
+        width: 60vw;
+    }
+    .cartao_top{
+        height: 40%;
+    }
+    .cartao_onibus p{
+        font-size: 4.5vw;
+    }
+    .cartao_onibus h3{
+        font-size: 5vw;        
+    }
+    .cartao_onibus h5{
+        font-size: 3vw;
+        max-height: 6vw;
+        margin-bottom: 0.8vw;
+    }
+}

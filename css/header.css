@@ -55,3 +55,23 @@ header{
     font-size: 1.5vw;
     font-family: 'font_bold';
 }
+@media (max-width: 425px) {
+    header{
+        width: 100vw;
+        height: 20vw;
+        justify-content: space-around;
+    }
+    #busca_bairro{
+        width: 50%;
+    }
+    #img_logo{
+        display: none;
+    }
+    #preco{
+        width: 30%;
+        height: 40%;
+        font-size: 3vw;
+        padding-top: 1.5vw;
+    }
+
+}
