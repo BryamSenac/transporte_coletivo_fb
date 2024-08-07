@@ -73,5 +73,7 @@ header{
         font-size: 3vw;
         padding-top: 1.5vw;
     }
-
+    .bairro_input{
+        font-size: 3vw;
+    }
 }

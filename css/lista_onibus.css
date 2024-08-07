@@ -128,7 +128,6 @@
 
 @media (max-width: 425px) {
     #lista_onibus{
-        bottom: 0;
         z-index: 3;
         width: 100vw;
         height: 15vh;
@@ -141,7 +140,8 @@
     }
     .lista{
         height: 100%;
-        width: auto;
+        width: 100vw;
+        padding: 0 1vw;
         flex-direction: row;
         overflow-x: scroll;
     }
@@ -150,6 +150,7 @@
         width: auto;
         border-radius: 1.5vw;
         padding: 0.8vw;
+        margin: 0 1vw;
     }
     .cartao_top, .cartao_botton{
         width: 60vw;
