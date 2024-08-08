@@ -130,8 +130,8 @@
     #lista_onibus{
         z-index: 3;
         width: 100vw;
-        height: 20vh;
-        bottom: 5vh;
+        height: 17vh;
+        bottom: 7vh;
     } 
     #lista_onibus h1{
         display: none;
