@@ -130,7 +130,7 @@
     #lista_onibus{
         z-index: 3;
         width: 100vw;
-        height: 15vh;
+        height: auto;
     } 
     #lista_onibus h1{
         display: none;
@@ -139,7 +139,7 @@
         display: none;
     }
     .lista{
-        height: 100%;
+        height: auto;
         width: 100%;
         padding: 0 1vw;
         flex-direction: row;
@@ -151,13 +151,14 @@
         width: auto;
         border-radius: 1.5vw;
         padding: 0.8vw;
-        margin: 0 5%;
+        margin: 0 1.5%;
+        flex: none;
     }
     .cartao_top, .cartao_botton{
         width: 60vw;
     }
     .cartao_top{
-        height: 40%;
+        height: auto;
     }
     .cartao_onibus p{
         font-size: 4.5vw;
