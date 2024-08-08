@@ -130,8 +130,8 @@
     #lista_onibus{
         z-index: 3;
         width: 100vw;
-        height: auto;
-        bottom: 10vh;
+        height: 20vh;
+        bottom: 5vh;
     } 
     #lista_onibus h1{
         display: none;
@@ -140,26 +140,24 @@
         display: none;
     }
     .lista{
-        height: auto;
+        height: 100%;
         width: 100%;
         padding: 0 1vw;
         flex-direction: row;
         overflow-x: scroll;
-        overflow-y: hidden;
     }
     .cartao_onibus{
         height: 90%;
         width: auto;
         border-radius: 1.5vw;
         padding: 0.8vw;
-        margin: 0 1.5%;
-        flex: none;
+        margin: 0 1vw;
     }
     .cartao_top, .cartao_botton{
         width: 60vw;
     }
     .cartao_top{
-        height: auto;
+        height: 40%;
     }
     .cartao_onibus p{
         font-size: 4.5vw;
