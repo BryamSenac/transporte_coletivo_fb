@@ -131,6 +131,7 @@
         z-index: 3;
         width: 100vw;
         height: auto;
+        bottom: 10vh;
     } 
     #lista_onibus h1{
         display: none;
